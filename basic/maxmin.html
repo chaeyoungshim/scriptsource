@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numArr = [52, 273, 586, 32, 57, 103, 312, 2];
+      //최댓값과 최솟값 출력하기
+      let max = 0;
+      let min = 999;
+      for (let num of numArr) {
+        if (num > max) {
+          max = num;
+        }
+        if (num < min) {
+          min = num;
+        }
+      }
+      document.write("최대값 : " + max + "<br>");
+      document.write("최소값 : " + min);
+
+      // 이 부분은 내가 한 거
+      //   for (let i = 0; i < numArr.length; i++) {
+      //     if (numArr[i] > max) {
+      //       max = numArr[i];
+      //     }
+      //     if (numArr[i] < min) {
+      //       min = numArr[i];
+      //     }
+      //   }
+      //   document.write(max + "<br>");
+      //   document.write(min + "<br>");
+    </script>
+  </body>
+</html>
