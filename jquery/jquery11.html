@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>인접관계선택자</h1>
+    <ul id="wrap">
+      <li>
+        리스트1
+        <ul>
+          <li id="list_1">리스트 1-1</li>
+          <li>리스트 1-2</li>
+        </ul>
+      </li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+    </ul>
+    <ul>
+      <div id="wrap2">
+        <h1>인접관계선택자</h1>
+        <p>내용1</p>
+        <p class="txt">내용2</p>
+        <p>내용3</p>
+        <p>내용4</p>
+      </div>
+    </ul>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+      //id가 list_1인 태그의 부모를 잡아주기 위해 parent() 사용
+      //css 연달아서 계속 이어붙일 수 있음(누적 적용)
+      $("#list_1")
+        .parent()
+        .css("border", "2px solid red")
+        .css("background-color", "yellow");
+
+      //내용1 선택하고 테두리 그리기
+      //배경색 지정
+      //   $("#wrap2 p:nth-child(2)")
+      //     .css("border", "2px solid red")
+      //     .css("background-color", "#0ff");
+
+      $("#wrap2 .txt")
+        .prev()
+        .css("border", "2px solid red")
+        .css("background-color", "#0ff");
+
+      //내용 3,4 선택하고 테두리 그리기
+      //배경색은 내용1과 다르게
+      //   $("#wrap2 .txt ~ p")
+      //     .css("border", "4px solid purple")
+      //     .css("background-color", "green");
+
+      $("#wrap2 .txt")
+        .nextAll()
+        .css("border", "4px solid purple")
+        .css("background-color", "green");
+    </script>
+  </body>
+</html>

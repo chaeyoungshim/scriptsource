@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // scope : global, function, block
+
+      //global scope
+      let value = "hello";
+
+      function myFunction() {
+        //function scope
+        let value = "world";
+        console.log(value); //function 안이니까 function 안에 변수 출력
+      }
+
+      myFunction();
+      //여기 value는 hello 가 출력, function 밖이니까
+      console.log(value);
+    </script>
+  </body>
+</html>

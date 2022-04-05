@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <input type="text" name="num1" id="" />
+        +
+        <input type="text" name="num2" id="" />
+        =
+        <input type="text" name="result" id="" />
+      </div>
+      <input type="button" value="계산" />
+    </form>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+      // $("[type='button']").click();
+      // : => 타입이~ 라는 의미, :text는 타입이 text라는 의미
+      $(":button").click(function () {
+        //num1,num2 값 가져오기
+        let num1 = Number($("[name='num1']").val());
+        let num2 = Number($("[name='num2']").val());
+        //연산 후 결과값 result 보여주기
+        $("[name='result']").val(num1 + num2);
+      });
+
+      //+ : 문자열 연결
+      //parseInt() , Number()s
+      // +, - , *, /, % => '3'*4 = 12 다 가능, + 만 연결 의미
+      // function calc() {
+      //   //num1 값 가져오기, 값이니까 value
+      //   let num1 = Number(document.querySelector("[name='num1']").value); //css 형식도 가능
+      //   //num2 값 가져오기
+      //   let num2 = Number(document.querySelector("[name='num2']").value);
+      //   //연산 후 결과값 result에 보여주기
+      //   document.querySelector("[name='result']").value = num1 + num2;
+      // }
+    </script>
+  </body>
+</html>
