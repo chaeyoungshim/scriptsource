@@ -101,31 +101,26 @@
           .then((data) => {
             let result = "";
             result +=
-              "<ul><li>영화제목 : " +
+              "<p>영화제목 : " +
               data.movieInfoResult.movieInfo.movieNm +
-              "</li>";
+              "</p>";
             result +=
-              "<li>영어제목 : " +
+              "<p>영어제목 : " +
               data.movieInfoResult.movieInfo.movieNmEn +
-              "</li>";
+              "</p>";
             result +=
-              "<li>상영시간 : " +
-              data.movieInfoResult.movieInfo.showTm +
-              "</li>";
+              "<p>상영시간 : " + data.movieInfoResult.movieInfo.showTm + "</p>";
 
             data.movieInfoResult.movieInfo.directors.forEach((element) => {
-              result += "<ul><li>감독이름 : " + element.peopleNm + "</li>";
-              result +=
-                "<li>감독영어이름 : " + element.peopleNmEn + "</li></ul>";
+              result += "<p>감독이름 : " + element.peopleNm + "</p>";
+              result += "<p>감독영어이름 : " + element.peopleNmEn + "</p>";
             });
 
             data.movieInfoResult.movieInfo.actors.forEach((element) => {
-              result += "<ul><li>출연배우이름 : " + element.peopleNm + "</li>";
-              result +=
-                "<li>출연배우영어이름 : " + element.peopleNmEn + "</li>";
-              result += "<li>출연한영화 : " + element.cast + "</li>";
-              result +=
-                "<li>영화영어이름 : " + element.castEn + "</li></ul></ul>";
+              result += "<p>출연배우이름 : " + element.peopleNm + "</p>";
+              result += "<p>출연배우영어이름 : " + element.peopleNmEn + "</p>";
+              result += "<p>출연한영화 : " + element.cast + "</p>";
+              result += "<p>영화영어이름 : " + element.castEn + "</p>";
             });
 
             document.querySelector(".box3").innerHTML = result;
