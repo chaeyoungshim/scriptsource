@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script src="../jquery/jquery-3.6.0.min.js"></script>
+    <script>
+      //   $.ajax({
+      //     //fetch랑 같은거
+      //     url: "",
+      //     type: "get", //기본이 get
+      //     data: FormData,
+      //     dataType: "요청 데이터 타입", //html, text, json, xml..
+      //     success: function (data) {
+      //       //서버로부터 요청한 결과가 도착하면 호출 => 성공 시 200번
+      //       //then 부분을 여기에다 작성
+      //     },
+      //     error: function () {
+      //       //서버가 응답을 하지 않는 경우(실패 시)
+      //     },
+      //   });
+
+      $.ajax({
+        url: "./data/test.txt",
+        dataType: "text", //텍스트 파일
+        success: function (data) {
+          //성공하면data 변수명에 담을 것
+          console.log(data);
+          $("div").html(data); //div 영역에 밀어넣기
+        },
+        error: function (xhr, status, error) {
+          console.log(status);
+        },
+      });
+    </script>
+  </body>
+</html>

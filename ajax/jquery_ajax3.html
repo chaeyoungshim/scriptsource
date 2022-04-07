@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script src="../jquery/jquery-3.6.0.min.js"></script>
+    <script>
+      $.getJSON({
+        url: "./data/data1.json",
+        success: function (data) {
+          //성공 시 data 변수에 내용 담을 것
+          console.log(data); //성공
+          let output = "<ul>";
+
+          output += "<li>version : " + data.version + "</li>"; //data의 version 가져오기
+          output += "<li>codename : " + data.codename + "</li></ul>"; //data의 codename 가져오기
+
+          $("div").html(output); //html로 div 영역에 output 넣기
+        },
+      });
+    </script>
+  </body>
+</html>
