@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <div>
+        <label>이름</label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <label>비밀번호</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <div>
+        <label>주소</label>
+        <input type="text" name="addr" id="addr" />
+      </div>
+      <button type="button" id="modify">내용 수정</button>
+      <button type="button" id="read">내용 보기</button>
+      <button type="button" id="delete">내용 삭제</button>
+    </form>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+      //form 요소 가져오기
+      let form = $("form");
+
+      //read 버튼 클릭시
+      //form action  => jquery1.html
+      //form 요소 중 이름 요소는 제거하고 전송(remove())
+
+      //1. read 가져오기 + read 클릭 시 jquery1.html 로 이동
+      $("#read").click(function () {
+        //특정 태그의 속성 변경 => attr()
+        //순서 중요함- action 설정 => 이름 요소 제거 => 전송하기
+        $(form).attr("action", "jquery1.html");
+        $("#username").remove(); //이름 요소는 제거하고 전송
+        $(form).submit(); //전송하기
+      });
+
+      //modify 버튼 클릭시
+      //form action => jquery2.html
+      //form 요소 모두 제거하고 전송
+
+      //2. modify 가져오기
+      $("#modify").click(function () {
+        //action 변경해주기
+        $(form).attr("action", "jquery2.html");
+        $(form).empty(); //요소 모두 제거하기 empty()
+        $(form).submit(); //그리고 전송하기
+      });
+
+      //delete 버튼 클릭시
+      //form action => jquery3.html
+      //form 요소 모두 제거하기
+      //새로운 form 요소 추가해서 전송
+      $("#delete").click(function () {
+        $(form).attr("action", "jquery3.html"); //form action => jquery3.html
+        $(form).empty(); //form 요소 모두 제거하기
+        $(form).append("<input type='text' name='no' value='3'>"); //직접 넣어주기
+        $(form).submit();
+      });
+    </script>
+  </body>
+</html>
