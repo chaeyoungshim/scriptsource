@@ -68,7 +68,7 @@ $(function () {
 $.validator.addMethod(
   "validId",
   function (data) {
-    const regId = /^(?=.*A-Za-z)(?=.*[0-9])[A-Za-z0-9]{6,12}$/;
+    const regId = /^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{6,12}$/;
     return regId.test(data); //원본데이터인 입력받을 data를 넣어주고 리턴해주기
   },
   "아이디는 영문자,숫자의 조합으로 6~12자리로 만들어야 합니다"
